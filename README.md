@@ -3,6 +3,7 @@ simple rofi script to choose player for playerctl to execute its command
 
 ## Usage
 copy `playerSwitch.py` and `playerctl.sh` to `~/.config/i3/scripts/` or you can change the directory that you want inside the scripts 
+
 to run player switcher, do
 ```bash
 python ~/.config/i3/scripts/playerSwitch.py
