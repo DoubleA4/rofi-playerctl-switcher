@@ -29,7 +29,7 @@ for obj in list:
 c = '"'+"\n".join(menuArray)+'"'
 
 # displaying menu
-#choice = subprocess.Popen(['echo', c, '|', 'rofi', '-dmenu', '-p', "Select Players:"], text=True).stdout
+#choice = subprocess.Popen(['echo', c, '|', 'rofi', '-dmenu', '-p', "Select Player:"], text=True).stdout
 choice = os.popen('echo ' + c + ' | rofi -dmenu -i -p "Select Players" -theme ~/.config/rofi/rofidmenu.rasi').read()[:-1]
 
 for obj in list:
