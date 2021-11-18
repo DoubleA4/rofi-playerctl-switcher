@@ -3,7 +3,7 @@ import subprocess
 
 # config
 path = "~/.config/i3/scripts"
-rofiOption = "-theme ~/.config/rofi/rofidmenu.rasi"
+rofiOption = ""
 
 # get list of players
 players = subprocess.run(['playerctl', '-l'], capture_output=True, text=True).stdout.split("\n")
