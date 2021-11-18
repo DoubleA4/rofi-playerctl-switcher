@@ -1,6 +1,10 @@
 import os
 import subprocess
 
+# config
+path = "~/.config/i3/scripts"
+rofiOption = "-theme ~/.config/rofi/rofidmenu.rasi"
+
 # get list of players
 players = subprocess.run(['playerctl', '-l'], capture_output=True, text=True).stdout.split("\n")
 players.pop(len(players)-1)
@@ -29,9 +33,8 @@ for obj in list:
 c = '"'+"\n".join(menuArray)+'"'
 
 # displaying menu
-#choice = subprocess.Popen(['echo', c, '|', 'rofi', '-dmenu', '-p', "Select Player:"], text=True).stdout
-choice = os.popen('echo ' + c + ' | rofi -dmenu -i -p "Select Players" -theme ~/.config/rofi/rofidmenu.rasi').read()[:-1]
+choice = os.popen('echo ' + c + ' | rofi -dmenu -i -p "Select Players" ' + rofiOption).read()[:-1]
 
 for obj in list:
     if obj.display == choice:
-        os.system("echo " + obj.command + " > ~/.config/i3/scripts/player")
+        os.system("echo " + obj.command + " > " + path + "/player")
