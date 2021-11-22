@@ -15,10 +15,10 @@ for i, player in enumerate(players):
     statusGet = subprocess.run(['playerctl', '-p', player, 'status'], capture_output=True, text=True).stdout[:-1]
     selected = ' ' if i == 0 else ''
     if statusGet == 'Playing':
-        status = ""
+        status = " "
     else:
-        status = ""
-    list.append(selected + status + " " + player.split(".")[0] + " " + info)
+        status = " "
+    list.append(selected + status + player.split(".")[0] + " " + info)
 
 # preparing menu
 menu = '"'+"\n".join(list)+'"'
